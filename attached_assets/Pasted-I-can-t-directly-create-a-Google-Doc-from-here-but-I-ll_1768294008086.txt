@@ -1,0 +1,480 @@
+I can’t directly create a Google Doc from here, but I’ll give you a clean, copy‑pasteable PRD you can drop into Google Docs. I’ll integrate all changes (pricing, free extensions, telephony economics, insurance track, 90s UI).
+
+***
+
+# Product Requirements Document (PRD)  
+**Product:** PartyLine Modern (working name)  
+**Last updated:** 2026‑01‑13
+
+***
+
+## 1. Product Overview
+
+**Vision**  
+A modern, safe, voice‑only “party line” that lets adults talk to real humans when they feel lonely or just want company. People can join for free 1:1 or small‑group calls, or pay to connect with vetted companions who are compensated for their time.
+
+**Core Characteristics**
+
+- Voice‑only: **no video, no images, no file sharing.**
+- Age restriction: **18+ only.**
+- Content restrictions: **no explicit sexual content**, no escorting, no hate or harassment.
+- Access methods:
+  - Phone number (PSTN → platform).
+  - Web/app calls (WebRTC).
+- Conversation modes:
+  - 1:1 (free or paid).
+  - Small groups up to 5 participants (free or paid host).
+- Time & pricing:
+  - Free calls: up to **60 minutes per call**.
+  - Post‑cap extension: **5 USD per person per additional hour**.
+  - Paid companion calls: **1–5 USD per minute**, with marketplace economics.
+
+***
+
+## 2. Target Users & Positioning
+
+### 2.1 Primary MVP Target
+
+**Primary cohort:** Adults **40–75** (emphasis on 50+):
+
+- Lonely, widowed, or socially isolated.
+- Comfortable with phone calls; variable comfort with apps/web.
+- Often feel they are “bothering people” if they call family or friends.
+
+**Secondary cohort:** Adults **25–45**:
+
+- Comfortable with web/app.
+- Interested in low‑pressure, anonymous voice conversations, interest rooms, or “regular” companions.
+
+### 2.2 Positioning Statement
+
+> “PartyLine Modern is a safe, platonic phone and web companion line for adults who want someone to talk to—without video, explicit content, or judgment.”
+
+Differentiation:
+
+- Not a random video/chat roulette app.
+- Not a dating/NSFW or escort service.
+- Not clinical therapy or telehealth.
+- Inspired by:
+  - 80s/90s party lines (fun, spontaneous calls).
+  - Telephone befriending and companion care programs (reliability, safety).
+
+***
+
+## 3. Business Model & Unit Economics
+
+### 3.1 Revenue Streams
+
+1. **Paid 1:1 calls with companions**
+   - Caller price: **1–5 USD per minute**.
+   - Companion share: target **40–70%** depending on price tier and seniority:
+     - Example splits:
+       - 1.00/min → 0.60 to companion, 0.40 to platform.
+       - 3.00/min → 1.80 to companion, 1.20 to platform.
+       - 5.00/min → 2.50 to companion, 2.50 to platform.
+   - Platform take: roughly **30–60%** depending on configuration.
+
+2. **Paid group rooms (up to 5 participants)**
+   - Hosted by a companion.
+   - Participants pay either:
+     - Per‑minute rates (e.g., 0.50–2.00/min), or
+     - Flat session price (e.g., 10–20 for a 60‑minute group).
+   - Aggregate revenue per hour is sum of all participants’ payments; companion earns per‑hour; platform takes a commission.
+
+3. **Free calls with paid extensions**
+   - Free calls: 60 minutes per call.
+   - At 55 minutes, participants get prompt:
+     - “You’ve reached a free hour. Continue for another 60 minutes for 5.”
+   - Each participant chooses individually:
+     - Those who pay continue into extended hour.
+     - Those who don’t are gracefully disconnected at the 60‑minute mark.
+
+4. **Future: Subscriptions**
+   - Bundles of minutes at a discount (e.g., 120 min/month).
+   - “Regulars” features (preferred companion, priority access).
+   - Possible health‑plan contracts (see insurance strategy).
+
+### 3.2 Telephony Cost Assumptions
+
+Using CPaaS (e.g., Twilio/Vonage/Bandwidth):
+
+- Conservative assumption: **0.015 USD per minute per call leg**, including carrier, platform, and number costs.
+- A 1:1 call has **2 legs** (caller ↔ bridge, companion ↔ bridge):
+  - 60 minutes → ≈ 1.80 USD total voice cost (2 × 60 × 0.015).
+- A 5‑person group has **5 legs**:
+  - 60 minutes → ≈ 4.50 USD voice cost (5 × 60 × 0.015).
+
+**Economics vs pricing:**
+
+- 1:1 at 1.00/min:
+  - Revenue/hour: 60.
+  - Voice cost/hour: ~1–2.
+  - Gross voice margin: ~58–59 before companion payout and other costs.
+- 1:1 extension at 5/hour/person:
+  - 1:1 extension revenue/hour: 10.
+  - Voice cost/hour: ~1–2.
+  - Gross margin: ~8–9.
+- 5‑person group extension at 5/hour/person:
+  - Revenue/hour: 25.
+  - Voice cost/hour: ~4–5.
+  - Gross margin: ~20.
+
+**Conclusion:** Telephony costs are small relative to revenue. Profitability hinges on:
+
+- Companion share and utilization.
+- Acquisition costs for callers and companions.
+- Overall operational overhead.
+
+### 3.3 Freemium → Paid Conversion Hypothesis
+
+- Free usage is the emotional proof: “I feel better after talking.”
+- Conversion thesis:
+  - 5–15% of active free users try at least one paid session in 90 days.
+  - 2–5% become recurring paid users (monthly).
+- Key triggers:
+  - Bias toward converting people after good free experiences: “Want to talk to [Name] again?”.
+  - Smooth upgrade flows when calls hit the free limit (“tap to continue at 5/hour”).
+
+***
+
+## 4. Supply Seeding & Companion Experience
+
+### 4.1 Initial Supply Strategy
+
+- Target 20–50 high‑quality companions for beta:
+  - Recruited from:
+    - Retirees, teachers, social workers, pastoral/care backgrounds.
+    - People already exploring “paid to chat” side hustles but preferring a safe, platonic environment.
+- De‑risk early idle time:
+  - Offer guaranteed floor earnings for first X hours (e.g., 15–20/hour) during beta.
+- Demand control:
+  - Limit paid call slots and groups per hour/day initially to keep companions busy and ensure strong early experiences.
+
+### 4.2 Companion Tools & Burnout Prevention
+
+- Availability & scheduling:
+  - Recurring availability blocks (e.g., Mon/Wed/Fri 5–9pm).
+  - “Go online now” toggle for on‑demand.
+  - Callers can see “available now” or book future slots.
+- Session limits:
+  - Companions can set daily and weekly caps (e.g., max 4 hours/day).
+  - System prompts to take breaks after long stretches.
+- Support & training:
+  - Short onboarding modules:
+    - Empathic listening.
+    - Boundaries and “I’m not a therapist” script.
+    - De‑escalation and crisis hand‑off basics.
+  - Peer community:
+    - Private forum or chat for companions.
+    - Optional group debrief sessions.
+
+***
+
+## 5. Core Functional Requirements (MVP)
+
+### 5.1 Onboarding & Identity
+
+**Callers**
+
+- Age gate: confirm **18+** with date of birth.
+- Phone verification (SMS) or phone‑back verification on PSTN.
+- Optional email.
+- Profile:
+  - Nickname.
+  - Age band (18–29, 30–44, 45–59, 60+).
+  - Interests (tags).
+  - Preferred language.
+
+**Companions**
+
+- Application:
+  - Basic bio and motivations.
+  - Interests, languages, availability.
+- Identity verification:
+  - Government ID and selfie verification (where feasible).
+- Background checks:
+  - National criminal and sex‑offender checks in primary markets.
+  - Costs recouped via small onboarding fee or first payout deduction.
+- Training:
+  - Mandatory acceptance of role definition and code of conduct.
+  - Completion of short training modules.
+
+### 5.2 Matching & Room Types
+
+**Matching dimensions**
+
+- Random: “Just connect me to someone.”
+- Interest‑based: common tags (music, books, parenting, grief, expats, etc.).
+- Age groups: match within selected age band or compatible bands.
+
+**Room types**
+
+- 1:1 free:
+  - Random, strictly platonic, no companion pay.
+- 1:1 paid:
+  - Caller selects a companion (via profile list) or “quick pick”.
+  - Dynamic per‑minute price displayed clearly.
+- Group free:
+  - Up to 5 participants.
+  - Topic or mood based (e.g., “late night 50+,” “book lovers,” “venting room”).
+- Group paid:
+  - Companion‑hosted.
+  - Participants pay; host earns per‑minute/hour.
+
+**In‑call controls**
+
+- For all:
+  - Mute/unmute.
+  - Leave.
+  - Block/report user after call ends; simple 1–2 tap flows.
+- For companions/hosts:
+  - Remove/disconnect disruptive participants.
+  - Mark call as “emotionally heavy” for internal support.
+
+### 5.3 Time & Payment Mechanics
+
+**Free calls**
+
+- Duration: 60 minutes per session.
+- Warnings at 55 minutes.
+- At 60 minutes:
+  - If no extension purchase, call ends gracefully.
+  - Option to join another free call after a cooling‑off or daily usage limit (configurable).
+
+**Paid calls & extensions**
+
+- Pricing:
+  - 1–5/minute for paid 1:1 and some group formats.
+  - 5/hour extension for participants in free calls.
+- Payment flow:
+  - Web/app:
+    - Card or wallet top‑up.
+    - Pre‑authorization for expected session length or credit bundle.
+  - PSTN:
+    - Free calls accessible via phone number.
+    - To pay, callers are prompted (via IVR/SMS) to go to web/app to add payment method.
+    - Option for later carrier billing only after maturity and risk evaluation.
+
+***
+
+## 6. Trust, Safety & Crisis Protocols
+
+### 6.1 Policy Framework
+
+- Prohibited:
+  - Sexual content and innuendo beyond PG‑13.
+  - Dating/escort framing.
+  - Harassment, hate speech, doxing, threats.
+  - Any engagement with minors (platform is 18+ only).
+  - Representing oneself as a licensed professional (therapist, lawyer, doctor) unless in a vetted provider program (future).
+- Clear role definition:
+  - Companions are friendly listeners, not clinicians or romantic partners.
+
+### 6.2 Gray‑Area Emotional Support & Parasocial Attachments
+
+- Training:
+  - Teach companions to:
+    - Use reflective listening.
+    - Gently decline clinical advice requests.
+    - Use boundary phrases: “I’m here as a friendly ear, not a therapist.”
+- Product mechanisms:
+  - Limits on repeated calls:
+    - Soft caps for hours/week between the same caller and companion.
+    - Prompts to rotate to other companions: “Let’s meet someone new this time.”
+  - Internal flags:
+    - Companions can mark conversations as emotionally heavy.
+    - Platform monitors for high frequency/intensity relationships for review.
+
+### 6.3 Crisis Escalation
+
+- Scenario: caller expresses suicidal ideation or imminent self‑harm.
+- Companion protocol:
+  - Stay calm; listen and validate.
+  - Avoid promising secrecy or specific outcomes.
+  - Provide crisis resources for caller’s location (e.g., 988 in the US, local hotlines).
+  - Encourage caller to contact emergency services or a trusted person.
+- Platform support:
+  - “Escalate” button for companions in app.
+  - Dedicated ops channel for real‑time support (chat or on‑call specialist).
+- Long‑term:
+  - Formal partnerships with crisis hotlines for training and warm hand‑offs.
+  - Legal review of data handling and notification responsibilities.
+
+***
+
+## 7. Technical Architecture (MVP)
+
+### 7.1 Telephony & Media
+
+- CPaaS first:
+  - Twilio/Vonage/Bandwidth‑like provider for:
+    - Phone number provisioning.
+    - PSTN ingress/egress.
+    - Call routing into VoIP bridges.
+    - E911 and regulatory basics.
+- Media:
+  - Central voice bridges (mixers) for 1:1 and group calls.
+  - WebRTC clients for browser/mobile connect to the same mixer infrastructure.
+- Long‑term scaling:
+  - Move high‑volume media to self‑hosted FreeSWITCH/Asterisk + direct SIP trunks for lower per‑minute cost, keeping CPaaS for fringe geographies or backup.
+
+### 7.2 Security & Privacy
+
+- Transport security:
+  - Encrypted web/socket connections (HTTPS/WSS).
+- PII:
+  - Hash or tokenize phone numbers; avoid exposing companion or caller phone numbers.
+- Recordings:
+  - Default: no recording for standard calls.
+  - If recording is used for moderation/training:
+    - Explicit consent.
+    - Clearly stated retention limits and access controls.
+
+***
+
+## 8. Go‑to‑Market
+
+### 8.1 Geography
+
+- Launch: **United States only**, English language.
+- Rationale:
+  - Simplifies regulatory environment.
+  - Aligns with Medicare Advantage and loneliness‑focused initiatives.
+- Focus areas:
+  - Metros and regions with high older‑adult populations and documented loneliness concerns.
+
+### 8.2 Acquisition Channels
+
+**Callers**
+
+- Senior‑focused and caregiver Facebook groups.
+- Community organizations and senior centers.
+- Reddit forums and online communities for loneliness and casual conversation.
+- Content marketing around “feeling lonely?” and “just want someone to talk to?”
+
+**Companions**
+
+- “Get paid to chat” content, but with emphasis on safety and explicit‑free nature.
+- Retired professionals, caregivers, teachers, and social work/psychology students.
+- Partnerships with volunteer organizations who want structured, compensated roles.
+
+***
+
+## 9. Long‑Term Insurance‑Friendly Strategy
+
+### 9.1 Why Insurance Cares
+
+- Loneliness and social isolation correlate with higher healthcare utilization and costs, especially among older adults and Medicare beneficiaries.
+- Medicare Advantage and some commercial plans have begun adding non‑medical benefits targeting social isolation and companionship (e.g., Papa pals, structured phone outreach, social programs).
+
+### 9.2 “Health Plan Edition” (B2B2C)
+
+Create a parallel offering for health plans:
+
+- Member identification:
+  - Plan uses its own data to identify high‑risk, lonely, or isolated members.
+- Access:
+  - Dedicated toll‑free numbers and branded web portals.
+- Staffing:
+  - Companions with extra training and potentially different vetting criteria.
+- Programs:
+  - Scheduled 1:1 check‑ins (weekly/biweekly).
+  - Themed group calls (e.g., “Coffee & chat,” “Widowed members support”).
+- Payment model:
+  - PMPM (per member per month) or program fees rather than claim reimbursement.
+  - Outcomes‑focused contracts (engagement, self‑reported loneliness reductions, downstream utilization trends).
+
+### 9.3 Clinical‑Adjacent Integration
+
+- Partner with behavioral health providers:
+  - Use PartyLine for warm‑line and group social sessions.
+  - Licensed clinicians separately bill telehealth visits (audio/video) through existing codes.
+- Data & outcomes:
+  - Use standardized loneliness/depression scales (e.g., UCLA Loneliness Scale) at enrollment and intervals.
+  - Track:
+    - Call frequency/duration.
+    - Self‑reported well‑being.
+    - Plan‑supplied utilization outcomes (ER visits, hospitalizations) in pilots.
+
+### 9.4 Product Adaptations for Insurers
+
+- Governance:
+  - Co‑develop protocols with plan medical and compliance teams.
+- Features:
+  - Program‑specific scripts and prompts for structured outreach.
+  - Additional documentation fields for companions in health‑plan programs.
+  - Opt‑in data sharing with plans, fully consented by members.
+
+### 9.5 Monetization Impact
+
+- Consumer marketplace:
+  - Direct revenue from paid calls and subscriptions.
+- Insurance channel:
+  - Larger, more stable contracts.
+  - Potential cross‑subsidy of consumer free tiers and platform investments.
+  - Stronger defensibility once integrated into care management workflows.
+
+***
+
+## 10. Design & UX: 90s‑Inspired, Modern Accessible
+
+### 10.1 Visual Direction
+
+- **Aesthetic:** “Soft 90s party line” – neon accents and playful shapes, but with high readability and accessibility.
+- **Color palette (example):**
+  - Background: deep navy (#060815) or charcoal.
+  - Primary accent: neon cyan (#00F0FF).
+  - Secondary accent: electric pink (#FF4FD8).
+  - Tertiary accent: soft neon yellow (#FFE866).
+  - Neutral: light gray/white (#F5F5F5) for content areas.
+
+### 10.2 UI Elements
+
+- Buttons:
+  - Subtle vertical gradient (lighter top, darker bottom).
+  - Large labels like “Talk to someone now,” “Join a small group.”
+- Decorative elements:
+  - Low‑opacity abstract shapes (squiggles, circles, rounded rectangles) in backgrounds.
+  - Occasional pixel or “CRT‑style” accent in headings.
+- Typography:
+  - Clean sans‑serif (system fonts) with large sizes.
+  - High‑contrast text and large hit areas for older adults.
+
+### 10.3 IVR & Voice Tone
+
+- Friendly, slightly nostalgic script:
+  - “Welcome to the Party Line. Press 1 to talk to someone now. Press 2 to join a small group.”
+- Short, clear prompts; repeat options often; no complex nested menus.
+
+***
+
+## 11. MVP Scope vs Future
+
+**MVP includes:**
+
+- US‑only, English.
+- Phone + web access.
+- Free 1:1 and groups (up to 5), 60‑minute cap, with 5/hour extensions.
+- Paid 1:1 and some group formats at 1–5/min.
+- Companion onboarding with identity verification and background checks.
+- Basic trust & safety and crisis playbook.
+
+**Post‑MVP:**
+
+- More sophisticated moderation (AI‑assisted).
+- Subscription models and loyalty features.
+- Health‑plan pilots with structured programs.
+- Media cost optimization via partial self‑hosting.
+
+***
+
+**How to create the Google Doc**
+
+1. Open Google Docs and create a new blank document.
+2. Paste this entire PRD.
+3. Use “Styles” to promote headings (Heading 1, Heading 2, etc.) for navigation.
+4. Optionally add a simple table of contents at the top.
+
+If you’d like, I can next produce a shorter, executive‑summary version you can share with potential collaborators or investors.
+
+Sources
