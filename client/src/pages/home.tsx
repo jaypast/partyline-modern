@@ -7,6 +7,7 @@ import { CompanionShowcase } from "@/components/companion-showcase";
 import { SafetySection } from "@/components/safety-section";
 import { PricingSection } from "@/components/pricing-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { FAQSection } from "@/components/faq-section";
 import { CTASection } from "@/components/cta-section";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <SafetySection />
         <PricingSection />
         <TestimonialsSection />
+        <FAQSection />
         <CTASection />
       </main>
       <Footer />

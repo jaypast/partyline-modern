@@ -12,12 +12,12 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                Your voice matters.{" "}
-                <span className="text-primary">We're listening.</span>
+                Talk to Someone on the Phone{" "}
+                <span className="text-primary">When You Feel Lonely</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                Late nights, quiet afternoons, or just those moments when you need someone there. 
-                PartyLine connects you with real people who genuinely want to hear your story.
+                A modern party line for adults who need someone to talk to. Voice-only calls with real, 
+                friendly people—no video, no explicit content, just genuine conversation when you need it most.
               </p>
             </div>
 

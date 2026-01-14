@@ -4,23 +4,23 @@ import { Card, CardContent } from "@/components/ui/card";
 const benefits = [
   {
     icon: Heart,
-    title: "Genuine Listeners",
-    description: "Real people who want to hear your story. No scripts, no bots—just authentic human connection.",
+    title: "Someone to Talk To",
+    description: "Real people who genuinely want to listen. When you feel lonely, we're here with a friendly voice—no bots, no scripts.",
   },
   {
     icon: Clock,
-    title: "Always Here",
-    description: "Whether it's 3 AM or Sunday afternoon, someone is ready to talk when you are.",
+    title: "Talk to Someone Now",
+    description: "Whether it's 3 AM or Sunday afternoon, companions are ready when you need someone to talk to.",
   },
   {
     icon: Shield,
-    title: "Safe & Confidential",
-    description: "Every companion is vetted and background-checked. What you share stays between you.",
+    title: "Safe & Platonic",
+    description: "Voice-only calls with vetted, background-checked companions. No video, no explicit content—just safe conversation.",
   },
   {
     icon: Users,
     title: "Zero Judgment",
-    description: "Talk about your day, your worries, or nothing at all. We're here to listen, not to fix.",
+    description: "Talk about your day, your worries, or nothing at all. Our phone line is for adults who just need a friendly ear.",
   },
 ];
 
@@ -30,10 +30,10 @@ export function BenefitsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-            More Than Just a Phone Call
+            Why People Choose Our Party Line
           </h2>
           <p className="text-lg text-muted-foreground">
-            This isn't speed dating, therapy, or a hotline. It's something simpler: a friendly voice when you need one.
+            This isn't therapy, dating, or a crisis hotline. It's a phone chat line for adults who feel lonely and want someone to talk to—simple as that.
           </p>
         </div>
 

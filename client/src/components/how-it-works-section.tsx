@@ -3,18 +3,18 @@ import { UserPlus, Search, Phone } from "lucide-react";
 const steps = [
   {
     icon: UserPlus,
-    title: "Tell Us About You",
-    description: "Just a nickname and a few interests. We keep it simple because the conversation is what matters.",
+    title: "Call or Sign Up",
+    description: "Dial 1-800-PARTYLN or create a quick profile online. Just a nickname and a few interests—we keep it simple.",
   },
   {
     icon: Search,
-    title: "Find Your Match",
-    description: "Browse companions who share your interests, or let us introduce you to someone new.",
+    title: "Find Someone to Talk To",
+    description: "Tell us what you'd like to talk about. We'll connect you with a friendly, vetted companion who's ready to listen.",
   },
   {
     icon: Phone,
-    title: "Start Talking",
-    description: "Connect instantly. Your first hour is on us—no cards, no commitments, just conversation.",
+    title: "Talk to Someone Now",
+    description: "Start your voice-only conversation instantly. Your first 60 minutes are free—no video, no explicit content.",
   },
 ];
 
@@ -24,10 +24,10 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-            Three Steps to Connection
+            How Our Phone Chat Line Works
           </h2>
           <p className="text-lg text-muted-foreground">
-            No complicated setup. No hoops to jump through. Just real conversation waiting for you.
+            Need someone to talk to? Our modern party line connects you with real people in under 2 minutes. No complicated setup—just conversation.
           </p>
         </div>
 

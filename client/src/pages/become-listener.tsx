@@ -130,13 +130,13 @@ export default function BecomeListener() {
           <div className="mx-auto max-w-4xl px-6 text-center">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
               <Mic className="h-4 w-4" />
-              <span className="text-sm font-medium">Become a PartyLine Companion</span>
+              <span className="text-sm font-medium">Get Paid to Talk to Lonely People</span>
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-6">
-              Share Your Voice, Make a Difference
+              Get Paid to Be a Good Listener
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Join our community of vetted listeners. Set your own schedule, your own rate, and help combat loneliness one conversation at a time.
+              Earn money talking to lonely adults who need someone to talk to. Voice-only, no explicit content, flexible hours. Set your own rate ($1-5/min) and help combat loneliness one conversation at a time.
             </p>
 
             <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto mb-12">
