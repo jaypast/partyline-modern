@@ -1,4 +1,4 @@
-import { Briefcase, Coffee, Sunset, MessageCircle } from "lucide-react";
+import { Briefcase, Coffee, Sunset, MessageCircle, Moon, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const scenarios = [
@@ -26,6 +26,18 @@ const scenarios = [
     name: "Diana, 55",
     role: "Small Business Owner",
   },
+  {
+    icon: Moon,
+    quote: "I work nights and everyone I know is asleep when I get home.",
+    name: "Kevin, 34",
+    role: "ER Nurse",
+  },
+  {
+    icon: Heart,
+    quote: "I spend all day caring for my mom. Sometimes I just need adult conversation.",
+    name: "Linda, 52",
+    role: "Full-time Caregiver",
+  },
 ];
 
 export function WhyPeopleCallSection() {
@@ -41,7 +53,7 @@ export function WhyPeopleCallSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {scenarios.map((scenario) => (
             <Card key={scenario.name} className="hover-elevate" data-testid={`card-scenario-${scenario.name.toLowerCase().replace(/\s+/g, "-")}`}>
               <CardContent className="p-6">

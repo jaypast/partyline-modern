@@ -14,7 +14,7 @@ export function CompanionShowcase() {
   const featuredCompanions = companions?.slice(0, 3) || [];
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
@@ -22,12 +22,12 @@ export function CompanionShowcase() {
               Meet Some of Our Companions
             </h2>
             <p className="text-lg text-muted-foreground">
-              Real people ready to listen. Each one vetted, each one genuine.
+              Real people ready to talk. Each one vetted, each one genuine.
             </p>
           </div>
           <Link href="/companions">
             <Button variant="outline" className="shrink-0" data-testid="button-view-all-companions">
-              See Everyone
+              Browse All Companions
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

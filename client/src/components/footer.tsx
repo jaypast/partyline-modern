@@ -14,7 +14,7 @@ export function Footer() {
               <span className="font-serif text-xl font-semibold">PartyLine</span>
             </Link>
             <p className="text-muted-foreground text-base leading-relaxed max-w-xs">
-              Real voices. Real connection. A safe place to talk when you need someone to listen.
+              Real conversations with interesting people. Available 24/7.
             </p>
           </div>
 

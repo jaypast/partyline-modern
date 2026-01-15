@@ -14,7 +14,7 @@ const safetyFeatures = [
   {
     icon: Phone,
     title: "Voice Only",
-    description: "No video, no photos, no file sharing. Just conversation—the way phone calls used to be.",
+    description: "No video means no performance. No photos means no judgment. Just two people talking.",
   },
 ];
 

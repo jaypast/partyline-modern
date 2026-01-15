@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "How much does it cost to talk?",
-    answer: "Your first 60 minutes are free. After that, companions set their own rates between $1-5 per minute. You can add a card during your call to continue, or hang up anytime—no pressure, no commitments.",
+    answer: "Your first 60 minutes are free. After that, premium companions set their own rates—browse our companion profiles to see individual prices. You can add a card during your call to continue, or hang up anytime—no pressure, no commitments.",
     icon: DollarSign,
   },
   {
@@ -37,11 +37,16 @@ const faqs = [
     answer: "Absolutely. Party Line Modern is 18+ only with age verification. We have zero tolerance for explicit content or harassment. All companions are background-checked, and our platform is designed for safe, platonic conversation.",
     icon: Shield,
   },
+  {
+    question: "Is this… a sex thing?",
+    answer: "No. PartyLine is voice-only, platonic conversation. No explicit content, no exceptions. We're the opposite of that—we're where you go when you want a real conversation, not a performance. Think of it as a phone call with an interesting stranger who actually wants to listen.",
+    icon: Phone,
+  },
 ];
 
 export function FAQSection() {
   return (
-    <section className="py-16 lg:py-24 bg-muted/30" id="faq">
+    <section className="py-12 lg:py-16 bg-muted/30" id="faq">
       <div className="mx-auto max-w-4xl px-6 lg:px-12">
         <div className="text-center space-y-4 mb-12">
           <h2 className="font-serif text-3xl lg:text-4xl font-bold">

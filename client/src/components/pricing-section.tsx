@@ -37,16 +37,16 @@ const pricingPlans = [
   },
   {
     name: "Premium Companions",
-    price: "$1-5",
+    price: "Varies",
     period: "per minute",
-    description: "Connect with your favorites.",
+    description: "Premium companions set their own rates. Browse to see prices.",
     features: [
       "Choose your companion",
       "Priority availability",
       "Schedule ahead",
       "Build lasting connections",
     ],
-    cta: "Meet Companions",
+    cta: "Browse Companions",
     href: "/companions",
     popular: false,
   },
@@ -54,7 +54,7 @@ const pricingPlans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 lg:py-28">
+    <section id="pricing" className="py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">

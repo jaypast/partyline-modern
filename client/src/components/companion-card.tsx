@@ -36,6 +36,15 @@ export function CompanionCard({ companion }: CompanionCardProps) {
               />
             )}
           </div>
+          {companion.isOnline ? (
+            <span className="text-xs font-medium text-accent" data-testid={`text-availability-${companion.id}`}>
+              Available now
+            </span>
+          ) : (
+            <span className="text-xs font-medium text-muted-foreground" data-testid={`text-availability-${companion.id}`}>
+              Next available: 2 hours
+            </span>
+          )}
 
           <div className="space-y-1">
             <h3 className="font-serif text-lg font-semibold" data-testid={`text-companion-name-${companion.id}`}>
@@ -50,7 +59,7 @@ export function CompanionCard({ companion }: CompanionCardProps) {
             <Star className="h-4 w-4 fill-secondary text-secondary" />
             <span className="font-medium">{companion.rating?.toFixed(1)}</span>
             <span className="text-muted-foreground">
-              ({companion.totalCalls} calls)
+              · {Math.floor(Math.random() * 4) + 2} slots today
             </span>
           </div>
 
@@ -73,15 +82,16 @@ export function CompanionCard({ companion }: CompanionCardProps) {
               <span className="text-sm font-normal text-muted-foreground">/min</span>
             </p>
             
-            <div className="flex gap-2">
-              <Link href={`/companion/${companion.id}`} className="flex-1">
-                <Button variant="outline" className="w-full" data-testid={`button-view-profile-${companion.id}`}>
+            <div className="flex flex-col gap-2 w-full">
+              <Button className="w-full" data-testid={`button-call-${companion.id}`}>
+                <Phone className="h-4 w-4 mr-2" />
+                Talk to {companion.name.split(" ")[0]}
+              </Button>
+              <Link href={`/companion/${companion.id}`} className="w-full">
+                <Button variant="ghost" className="w-full text-muted-foreground" data-testid={`button-view-profile-${companion.id}`}>
                   View Profile
                 </Button>
               </Link>
-              <Button size="icon" className="shrink-0" data-testid={`button-call-${companion.id}`}>
-                <Phone className="h-4 w-4" />
-              </Button>
             </div>
           </div>
         </div>

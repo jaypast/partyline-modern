@@ -34,8 +34,8 @@ export class MemStorage implements IStorage {
     const seedData: InsertCompanion[] = [
       {
         name: "Eleanor Wilson",
-        tagline: "Retired teacher who loves sharing stories and listening to yours.",
-        bio: "I spent 35 years as an elementary school teacher, and now I love connecting with people of all ages. Whether you want to discuss books, share memories, or just need someone to listen, I'm here for you. I believe everyone has a story worth hearing, and I consider it a privilege to be part of your day.",
+        tagline: "Ask her about the time she accidentally taught the wrong Civil War for a week.",
+        bio: "Former high school history teacher with 35 years of stories. I once spent an entire week teaching my students about the English Civil War instead of the American one—and didn't realize until a parent called. Now I'm here to listen to your stories too.",
         avatarUrl: "/avatars/eleanor.png",
         pricePerMinute: 2.00,
         interests: ["Books", "History", "Gardening", "Travel"],
@@ -45,8 +45,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Marcus Chen",
-        tagline: "Tech professional and great listener. Let's chat about anything!",
-        bio: "I work in tech but love talking about everything from sports to philosophy. Sometimes we all just need someone to bounce ideas off of or vent to—I'm that person. No judgment, just genuine interest in what's on your mind.",
+        tagline: "The guy who debugged code at his own wedding reception.",
+        bio: "Yes, I really did fix a production bug during my first dance. My wife still brings it up. I work in tech but love talking about everything—sports, philosophy, that weird dream you had. No judgment, just genuine curiosity.",
         avatarUrl: "/avatars/marcus.png",
         pricePerMinute: 1.50,
         interests: ["Technology", "Sports", "Music", "Cooking"],
@@ -56,8 +56,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Patricia Moore",
-        tagline: "Former nurse with a caring heart. Here to listen without judgment.",
-        bio: "After 30 years in healthcare, I understand the power of a good conversation. I've seen how talking things through can help people feel better, and I bring that same compassionate ear to our chats. Whatever's on your mind, I'm here.",
+        tagline: "30 years as an ER nurse. She's heard everything—try her.",
+        bio: "Nothing shocks me anymore. I've held hands through the scariest moments and celebrated the happiest ones. Now I bring that same calm, compassionate presence to our chats. Whatever's on your mind, I've probably heard wilder.",
         avatarUrl: "/avatars/patricia.png",
         pricePerMinute: 2.50,
         interests: ["Health", "Pets", "Nature", "Spirituality"],
@@ -67,8 +67,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Robert Johnson",
-        tagline: "Vietnam veteran and grandfather. Stories to share, ears to listen.",
-        bio: "After decades of life experience, I'm here to offer a friendly voice when you need one. I've lived through a lot and learned that connection is what matters most. Let's swap stories or just chat about the day.",
+        tagline: "Vietnam vet who hitchhiked across America in '72. Ask him anything.",
+        bio: "I've lived through things that would make a good movie—and some that definitely wouldn't. After decades of life, I've learned the best conversations happen with strangers. Let's swap stories.",
         avatarUrl: "/avatars/robert.png",
         pricePerMinute: 1.00,
         interests: ["History", "Sports", "Travel", "Music"],
@@ -78,8 +78,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Sarah Kim",
-        tagline: "Social worker by day, friendly ear by night. Let's talk!",
-        bio: "I've spent my career helping people navigate life's challenges, and I bring that same compassion here. Whether you need advice, a sounding board, or just friendly conversation, I'm happy to be here with you.",
+        tagline: "Will discuss your existential crisis or your Netflix queue. Both valid.",
+        bio: "Social worker by day, night owl by night. I've helped people through actual emergencies, so your 2 AM thoughts about whether you're living your best life? Totally manageable. Let's talk about the big stuff or the small stuff.",
         avatarUrl: "/avatars/sarah.png",
         pricePerMinute: 3.00,
         interests: ["Health", "Books", "Cooking", "Art"],
@@ -89,8 +89,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "William Thompson",
-        tagline: "Retired pastor offering a compassionate, non-judgmental ear.",
-        bio: "Decades of counseling have taught me the art of listening with empathy. I'm not here to preach or advise unless you want it—I'm simply here to be present and to listen. Everyone deserves to be heard.",
+        tagline: "Retired pastor who's been counseling longer than you've been alive.",
+        bio: "40 years of listening to people's deepest thoughts. I'm not here to preach unless you want that—mostly I'm here to be present. Everyone deserves to be heard without a to-do list attached.",
         avatarUrl: "/avatars/william.png",
         pricePerMinute: 2.00,
         interests: ["Spirituality", "Books", "History", "Music"],
@@ -100,8 +100,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "Maria Garcia",
-        tagline: "Bilingual companion ready to chat in English or Spanish.",
-        bio: "Growing up in a multicultural household taught me the value of diverse perspectives. I love learning about people's backgrounds and sharing stories. Let's have a conversation that leaves us both feeling enriched.",
+        tagline: "Raised in three countries. Fluent in code-switching and empanada recipes.",
+        bio: "My grandmother spoke only Spanish, my dad only English, and somehow I became the family translator at age 6. Now I love learning about everyone's backgrounds. Bonus: I can teach you the secret to perfect masa.",
         avatarUrl: "/avatars/maria.png",
         pricePerMinute: 1.75,
         interests: ["Travel", "Cooking", "Music", "Art"],
@@ -111,8 +111,8 @@ export class MemStorage implements IStorage {
       },
       {
         name: "James Anderson",
-        tagline: "Former corporate executive who learned the value of real talk.",
-        bio: "After years in the corporate world, I realized the most meaningful moments came from genuine conversations. Now I'm here to offer that same authentic connection. Business talk or life talk—I'm game for both.",
+        tagline: "Ex-Fortune 500 exec. Now he just wants to talk about movies.",
+        bio: "Spent 25 years in boardrooms before realizing the best conversations happened in elevators. Retired early to do more of those. Happy to discuss business strategy, but honestly I'd rather hear your hot take on Dune.",
         avatarUrl: "/avatars/james.png",
         pricePerMinute: 4.00,
         interests: ["Technology", "Books", "Sports", "Travel"],
@@ -125,8 +125,16 @@ export class MemStorage implements IStorage {
     seedData.forEach((data, index) => {
       const id = `companion-${index + 1}`;
       const companion: Companion = {
-        ...data,
         id,
+        name: data.name,
+        tagline: data.tagline,
+        bio: data.bio,
+        avatarUrl: data.avatarUrl ?? null,
+        pricePerMinute: data.pricePerMinute,
+        interests: data.interests,
+        languages: data.languages,
+        ageGroup: data.ageGroup,
+        isOnline: data.isOnline ?? false,
         totalCalls: Math.floor(Math.random() * 400) + 50,
         rating: Number((4.5 + Math.random() * 0.5).toFixed(1)),
       };
@@ -146,7 +154,15 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = randomUUID();
-    const user: User = { ...insertUser, id };
+    const user: User = {
+      id,
+      username: insertUser.username,
+      password: insertUser.password,
+      nickname: insertUser.nickname ?? null,
+      ageGroup: insertUser.ageGroup ?? null,
+      phone: insertUser.phone ?? null,
+      email: insertUser.email ?? null,
+    };
     this.users.set(id, user);
     return user;
   }
@@ -166,8 +182,16 @@ export class MemStorage implements IStorage {
   async createCompanion(insertCompanion: InsertCompanion): Promise<Companion> {
     const id = randomUUID();
     const companion: Companion = {
-      ...insertCompanion,
       id,
+      name: insertCompanion.name,
+      tagline: insertCompanion.tagline,
+      bio: insertCompanion.bio,
+      avatarUrl: insertCompanion.avatarUrl ?? null,
+      pricePerMinute: insertCompanion.pricePerMinute,
+      interests: insertCompanion.interests,
+      languages: insertCompanion.languages,
+      ageGroup: insertCompanion.ageGroup,
+      isOnline: insertCompanion.isOnline ?? false,
       totalCalls: 0,
       rating: 5.0,
     };
@@ -194,9 +218,15 @@ export class MemStorage implements IStorage {
   async createCall(insertCall: InsertCall): Promise<Call> {
     const id = randomUUID();
     const call: Call = {
-      ...insertCall,
       id,
+      callerId: insertCall.callerId,
+      companionId: insertCall.companionId ?? null,
       startTime: new Date(),
+      endTime: insertCall.endTime ?? null,
+      durationMinutes: insertCall.durationMinutes ?? null,
+      callType: insertCall.callType,
+      isPaid: insertCall.isPaid ?? false,
+      totalCost: insertCall.totalCost ?? null,
     };
     this.calls.set(id, call);
     return call;

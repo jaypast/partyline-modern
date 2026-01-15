@@ -95,8 +95,7 @@ function getAllFiles(dir: string, baseDir: string = dir): string[] {
 
 async function pushToGitHub() {
   const octokit = await getUncachableGitHubClient();
-  const { data: user } = await octokit.users.getAuthenticated();
-  const owner = user.login;
+  const owner = 'jaypast';
   const repo = 'partyline-modern';
   
   console.log(`Pushing to ${owner}/${repo}...`);

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, Users, Shield } from "lucide-react";
+import { Phone, Users, Shield, Clock, Check, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -11,14 +11,24 @@ export function HeroSection() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 bg-card dark:bg-card/80 px-4 py-2 rounded-full border border-secondary/40 dark:border-secondary/60" data-testid="badge-free-trial">
+                <span className="text-sm font-semibold text-secondary dark:text-secondary">Try it free</span>
+                <span className="text-sm text-foreground dark:text-foreground/90">— Your first 60 minutes, no card required</span>
+              </div>
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 Real Conversations with{" "}
                 <span className="text-primary">Interesting People</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                A modern party line for adults who love good conversation. Voice-only calls with 
-                friendly, vetted companions—available 24/7, first hour free.
+              <p className="text-xl text-muted-foreground dark:text-foreground/75 leading-relaxed max-w-xl">
+                Vetted companions. Voice only. Available right now.
               </p>
+              <div className="inline-flex items-center gap-2" data-testid="badge-live-conversations">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/80">847 conversations happening now</span>
+              </div>
             </div>
 
             <div className="p-6 rounded-xl bg-card border">
@@ -51,28 +61,36 @@ export function HeroSection() {
               <a href="tel:1-800-727-8954">
                 <Button size="lg" className="w-full sm:w-auto text-lg px-8 h-14" data-testid="button-hero-call-now">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call Now
+                  Call Now — First Hour Free
                 </Button>
               </a>
               <Link href="/companions">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto text-lg px-8 h-14" data-testid="button-hero-browse">
-                  Browse Companions
+                  Or Browse Companions First
                 </Button>
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Shield className="h-5 w-5 text-accent" />
-                <span className="text-sm font-medium">Adults Only (18+)</span>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4 border-t border-border/50">
+              <div className="flex items-center gap-2" data-testid="badge-available-24/7">
+                <Clock className="h-4 w-4 text-accent dark:text-accent" />
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/70">Available 24/7</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Users className="h-5 w-5 text-accent" />
-                <span className="text-sm font-medium">Vetted Companions</span>
+              <div className="flex items-center gap-2" data-testid="badge-background-checked">
+                <Shield className="h-4 w-4 text-accent dark:text-accent" />
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/70">Background Checked</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="h-5 w-5 text-accent" />
-                <span className="text-sm font-medium">Voice Only</span>
+              <div className="flex items-center gap-2" data-testid="badge-adults-only">
+                <Users className="h-4 w-4 text-accent dark:text-accent" />
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/70">Adults Only (18+)</span>
+              </div>
+              <div className="flex items-center gap-2" data-testid="badge-first-hour-free">
+                <Heart className="h-4 w-4 text-accent dark:text-accent" />
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/70">First Hour Free</span>
+              </div>
+              <div className="flex items-center gap-2" data-testid="badge-voice-only">
+                <Check className="h-4 w-4 text-accent dark:text-accent" />
+                <span className="text-sm font-medium text-muted-foreground dark:text-foreground/70">Voice Only</span>
               </div>
             </div>
           </div>
