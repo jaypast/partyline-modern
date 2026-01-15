@@ -4,17 +4,17 @@ const steps = [
   {
     icon: UserPlus,
     title: "Call or Sign Up",
-    description: "Dial 1-800-PARTYLN or create a quick profile online. Just a nickname and a few interests—we keep it simple.",
+    description: "Dial 1-800-PARTYLN or create a quick profile online. Just a nickname and a few interests.",
   },
   {
     icon: Search,
-    title: "Find Someone to Talk To",
-    description: "Tell us what you'd like to talk about. We'll connect you with a friendly, vetted companion who's ready to listen.",
+    title: "Pick Your Companion",
+    description: "Browse profiles or tell us what topics interest you. We'll match you with someone great.",
   },
   {
     icon: Phone,
-    title: "Talk to Someone Now",
-    description: "Start your voice-only conversation instantly. Your first 60 minutes are free—no video, no explicit content.",
+    title: "Start Talking",
+    description: "Voice-only conversation in under 2 minutes. First 60 minutes free—no card required.",
   },
 ];
 
@@ -24,10 +24,10 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-            How Our Phone Chat Line Works
+            How It Works
           </h2>
           <p className="text-lg text-muted-foreground">
-            Need someone to talk to? Our modern party line connects you with real people in under 2 minutes. No complicated setup—just conversation.
+            Call or sign up. Pick your companion. Start talking. It takes about 2 minutes.
           </p>
         </div>
 

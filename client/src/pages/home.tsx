@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { HowItWorksSection } from "@/components/how-it-works-section";
 import { BenefitsSection } from "@/components/benefits-section";
+import { WhyPeopleCallSection } from "@/components/why-people-call-section";
 import { CompanionShowcase } from "@/components/companion-showcase";
 import { SafetySection } from "@/components/safety-section";
 import { PricingSection } from "@/components/pricing-section";
@@ -16,11 +17,12 @@ export default function Home() {
       <Navigation />
       <main className="flex-1">
         <HeroSection />
-        <HowItWorksSection />
         <BenefitsSection />
         <CompanionShowcase />
-        <SafetySection />
+        <WhyPeopleCallSection />
+        <HowItWorksSection />
         <PricingSection />
+        <SafetySection />
         <TestimonialsSection />
         <FAQSection />
         <CTASection />

@@ -1,25 +1,20 @@
-import { Shield, UserCheck, Phone, Ban } from "lucide-react";
+import { Shield, UserCheck, Phone } from "lucide-react";
 
 const safetyFeatures = [
   {
     icon: UserCheck,
-    title: "Thoroughly Vetted",
+    title: "Background Checked",
     description: "Every companion passes identity verification and comprehensive background checks before they join.",
   },
   {
     icon: Shield,
-    title: "Adults Only",
-    description: "Age verification is required. This is a platform for grown-ups having grown-up conversations.",
-  },
-  {
-    icon: Ban,
-    title: "Purely Platonic",
-    description: "This isn't dating or anything else. Just genuine conversation between people who want to connect.",
+    title: "Adults Only (18+)",
+    description: "Age verification required. This is a platform for adults having real conversations.",
   },
   {
     icon: Phone,
-    title: "Here If You Need Us",
-    description: "Our companions know how to recognize when someone needs more help and can point you to the right resources.",
+    title: "Voice Only",
+    description: "No video, no photos, no file sharing. Just conversation—the way phone calls used to be.",
   },
 ];
 
@@ -32,14 +27,14 @@ export function SafetySection() {
             <Shield className="h-8 w-8 text-accent" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-            A Safe Space to Talk
+            How We Keep It Real
           </h2>
           <p className="text-lg text-muted-foreground">
-            Trust isn't given, it's earned. Here's how we earn yours.
+            Quality conversation requires quality people. Here's what we do.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-3">
           {safetyFeatures.map((feature) => (
             <div
               key={feature.title}

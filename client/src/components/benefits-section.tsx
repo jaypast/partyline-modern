@@ -1,26 +1,21 @@
-import { Heart, Clock, Shield, Users } from "lucide-react";
+import { Heart, Clock, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
   {
-    icon: Heart,
-    title: "Someone to Talk To",
-    description: "Real people who genuinely want to listen. When you feel lonely, we're here with a friendly voice—no bots, no scripts.",
-  },
-  {
     icon: Clock,
-    title: "Talk to Someone Now",
-    description: "Whether it's 3 AM or Sunday afternoon, companions are ready when you need someone to talk to.",
+    title: "Available 24/7",
+    description: "Whether it's 3 AM or Sunday afternoon, interesting people are ready to chat when you are.",
   },
   {
     icon: Shield,
-    title: "Safe & Platonic",
-    description: "Voice-only calls with vetted, background-checked companions. No video, no explicit content—just safe conversation.",
+    title: "Vetted Companions",
+    description: "Every companion passes identity verification and background checks. Real people, verified.",
   },
   {
-    icon: Users,
-    title: "Zero Judgment",
-    description: "Talk about your day, your worries, or nothing at all. Our phone line is for adults who just need a friendly ear.",
+    icon: Heart,
+    title: "First Hour Free",
+    description: "No credit card needed. Try a conversation and see if it's for you—no strings attached.",
   },
 ];
 
@@ -30,14 +25,14 @@ export function BenefitsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-            Why People Choose Our Party Line
+            Why People Choose PartyLine
           </h2>
           <p className="text-lg text-muted-foreground">
-            This isn't therapy, dating, or a crisis hotline. It's a phone chat line for adults who feel lonely and want someone to talk to—simple as that.
+            Good conversation shouldn't be hard to find. We make it easy.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-3">
           {benefits.map((benefit) => (
             <Card key={benefit.title} className="hover-elevate" data-testid={`card-benefit-${benefit.title.toLowerCase().replace(/\s+/g, "-")}`}>
               <CardContent className="p-8">

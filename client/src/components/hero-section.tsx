@@ -12,12 +12,12 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                Talk to Someone on the Phone{" "}
-                <span className="text-primary">When You Feel Lonely</span>
+                Real Conversations with{" "}
+                <span className="text-primary">Interesting People</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                A modern party line for adults who need someone to talk to. Voice-only calls with real, 
-                friendly people—no video, no explicit content, just genuine conversation when you need it most.
+                A modern party line for adults who love good conversation. Voice-only calls with 
+                friendly, vetted companions—available 24/7, first hour free.
               </p>
             </div>
 
@@ -112,12 +112,12 @@ export function HeroSection() {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 rounded-lg bg-background/50">
-                    <p className="text-2xl font-serif font-bold text-primary">60 min</p>
-                    <p className="text-sm text-muted-foreground">Free calls</p>
+                    <p className="text-2xl font-serif font-bold text-primary">24/7</p>
+                    <p className="text-sm text-muted-foreground">Available</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-background/50">
-                    <p className="text-2xl font-serif font-bold text-primary">$1-5</p>
-                    <p className="text-sm text-muted-foreground">Per min after</p>
+                    <p className="text-2xl font-serif font-bold text-primary">60 min</p>
+                    <p className="text-sm text-muted-foreground">Free to start</p>
                   </div>
                 </div>
               </div>
